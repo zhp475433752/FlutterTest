@@ -20,6 +20,7 @@ import 'package:fluttertest/listviewpage.dart';
 import 'dart:io';
 import 'dart:async';
 import 'package:path_provider/path_provider.dart';
+import 'package:fluttertest/OccupationStudent.dart';
 
 /// 在运行按钮旁边点击下拉箭头 选择caculator.dart文件运行
 void main() {
@@ -168,6 +169,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "batterypage");
               },
               child: Text("原生电池🔋电量"),
+            ),
+            new ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "occupatioin");
+              },
+              child: Text("自定义职业信息页面"),
             ),
           ],
         ),
