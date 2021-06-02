@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:fluttertest/state/CounterWidget.dart';
 import 'package:fluttertest/OccupationInfoPage.dart';
 import 'package:fluttertest/batterypage.dart';
 import 'package:fluttertest/gesturepage.dart';
 import 'package:fluttertest/gridview.dart';
+import 'package:fluttertest/state/ParentWidget.dart';
 import 'package:fluttertest/unlimitlistviewpage.dart';
 import 'SplashPage.dart';
 import 'newroute.dart';
@@ -56,6 +58,8 @@ class MyApp extends StatelessWidget {
           "gesturepage": (context) => GestureDetectorTestRoute(),
           "batterypage": (context) => BatteryWidget(),
           "occupatioin": (context) => OccupationInfoPage(),
+          "CounterWidget": (context) => CounterWidget(initValue: 20,),
+          "ParentWidget": (context) => ParentWidget(),
           "home": (context) => MyHomePage(title: '主页',),
         },
         home: new SplashPage());
@@ -175,6 +179,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "occupatioin");
               },
               child: Text("自定义职业信息页面"),
+            ),
+            new ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "CounterWidget");
+              },
+              child: Text("自定义计数器页面"),
+            ),
+            new ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "ParentWidget");
+              },
+              child: Text("父组件管理状态"),
             ),
           ],
         ),
